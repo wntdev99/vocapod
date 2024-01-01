@@ -29,11 +29,4 @@ CREATE TABLE comments (
     FOREIGN KEY (post_id) REFERENCES posts(id)
 );
 
-SHOW TABLES;
-
-DESCRIBE users;
-
-SELECT * FROM users;
-
-
 
