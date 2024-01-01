@@ -26,7 +26,8 @@ $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // 비밀번호
 $sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "회원 가입이 완료되었습니다.";
+    header("Location: registration_success.php");
+    exit;
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
