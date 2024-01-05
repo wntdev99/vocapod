@@ -1,0 +1,18 @@
+graph TD
+  subgraph "Presentation Layer" 
+    A[Web Browser] -->|HTTP Request| B[Web Server]
+    B -->|Request Handling| C[PHP]
+    C -->|Dynamic Content| B
+    B -->|HTTP Response| A
+  end
+
+  subgraph "Application Layer" 
+    D[Business Logic]
+    C -->|Data Processing| D
+  end
+
+  subgraph "Data Layer" 
+    E[Database]
+    D -->|SQL Queries| E
+  end
+
