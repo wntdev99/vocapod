@@ -26,7 +26,8 @@ if ($result->num_rows > 0) {
     if (password_verify($password, $row['password'])) {
         // 로그인 성공
         $_SESSION['username'] = $username;
-        header("Location: dashboard.php"); // 로그인 후 이동할 페이지
+	$_SESSION['user_id'] = $row['id']
+	header("Location: dashboard.php"); // 로그인 후 이동할 페이지
         exit();
     } else {
         echo "비밀번호가 일치하지 않습니다.";
